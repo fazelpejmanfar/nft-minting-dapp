@@ -10,11 +10,10 @@ To find out more please visit:
 
 [📺 YouTube](https://www.youtube.com/channel/UC1LV4_VQGBJHTJjEWUmy8nA)
 
-[👄 Hashlips Discord](https://discord.com/invite/qh6MWhMJDN)
+[👄 Hashlips Discord](https://discord.com/invite/qh6MWhMJDN) (You Can Find Me in Hashlips Server)
 
-[👄 FazelPejmanfar Discord](https://discord.com/FazelPejmanfar#5915)
 
-# HashLips NFT minting dapp 🔥
+# HashLips NFT minting dapp (Edits By FazelPejmanfar)🔥
 
 ![](https://github.com/fazelpejmanfar/nft-minting-dapp/blob/master/banner.png)
 

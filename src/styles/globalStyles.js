@@ -93,7 +93,7 @@ export const TextSub = styled.p`
 export const TextTotal = styled.p`
   font-family: 'Upheaval';
   color: var(--primary-text);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 2px;
   line-height: 1.6;
@@ -346,4 +346,11 @@ font-size: 1rem;
 export const Textbox = styled.p`
 text-align: left;
 font-size: 0.75rem;
+`;
+
+export const CBOX = styled.div`
+width: 30%;
+@media (max-width: 565px) {
+  width: 80%;
+}
 `;

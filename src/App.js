@@ -11,6 +11,7 @@ import { Panel, PanelGroup } from 'rsuite';
 import { Carousel } from 'rsuite';
 import { Notification, toaster } from 'rsuite';
 import { Loader } from 'rsuite';
+import { Badge } from 'rsuite';
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -144,7 +145,7 @@ export const ResponsiveWrapper = styled.div`
   width: 70%;
   border: 2px solid white;
   border-radius: 40px;
-  background: linear-gradient(90deg, rgba(105,111,0,1) 18%, rgba(98,157,0,1) 51%, rgba(0,116,56,1) 100%);
+  background: linear-gradient(90deg, rgba(135,142,20,1) 10%, rgba(0,125,223,1) 93%);
     @media (min-width: 767px) {
     flex-direction: row;
   }
@@ -225,8 +226,8 @@ export const StyledLink = styled.a`
 export const WalletBox = styled.div`
   text-decoration: none;
   border-radius: 10px;
-  border: 2px solid #F4B469;
-  background-color: #FFFDF7;
+  border: 2px solid white;
+  background-color: transparent;
   //padding: 10px;
   font-weight: bold;
   font-size: 15px;
@@ -235,25 +236,25 @@ export const WalletBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  box-shadow: 0px 4px 0px -2px black;
-  -webkit-box-shadow: 0px 4px 0px -2px black;
-  -moz-box-shadow: 0px 4px 0px -2px black;
-  :hover {
-    background-color: #FFF5EA;
-  }
+  box-shadow: 0px 4px 0px -2px white;
+  -webkit-box-shadow: 0px 4px 0px -2px white;
+  -moz-box-shadow: 0px 4px 0px -2px white;
+  @media (max-width: 565px) {
+    margin-top: 20px;
+  
 `;
 
 function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
-  const [walletAddress, setAddress] = useState("Connect Wallet");
+  const [walletAddress, setAddress] = useState("Not Connected");
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(``);
   const [tokens, settokens] = useState(1);
   const [brd, setbrd] = useState("2px solid #FFFFFF");
   const [bxsh, setbxsh] = useState("0px 0px 3px 0px #FFFFFF");
+  const [DOT, setDOT] = useState("red");
   const [type, setType] = React.useState('info');
   const [placement, setPlacement] = React.useState('topStart');
   const errmessage = (
@@ -264,6 +265,11 @@ function App() {
   const txmessage = (
     <Notification type={'success'} header={'success'} closable>
      Congrats, Mint Was successfull.
+    </Notification>
+  );
+  const mntmessage = (
+    <Notification type={'info'} header={'success'} closable>
+     <Loader/> Minting in Progress....
     </Notification>
   );
   const [CONFIG, SET_CONFIG] = useState({
@@ -298,8 +304,9 @@ function App() {
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
-    setbrd("2px solid #A673EF");
-    setbxsh("0px 0px 3px 0px #A673EF");
+    setbrd("2px solid yellow");
+    setbxsh("0px 0px 3px 0px yellow");
+    toaster.push(mntmessage, { placement })
     blockchain.smartContract.methods
       .mint(tokens)
       .send({
@@ -349,7 +356,7 @@ function App() {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
       setAddress(blockchain.account.substring(0,4) + "..." + blockchain.account.substring(38,42));
-
+      setDOT("green");
     }
   };
 
@@ -417,16 +424,11 @@ function App() {
           <s.Icons src="/config/images/opensea.svg" alt="opensea" />
           </a>
           </s.socialDiv>
-          <WalletBox
-          onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(connect());
-                        getData();
-                      }}>
+          <WalletBox>
             {blockchain.account !== "" ? (
             <>
-            <s.TextSubTitle style={{fontSize: "1rem", color: "#0B0E27"}}>
-              {walletAddress}
+            <s.TextSubTitle style={{fontSize: "1rem", color: "white"}}>
+            <Badge color={DOT}/> {walletAddress}
               </s.TextSubTitle>
             </>
             ) : null }
@@ -551,7 +553,7 @@ function App() {
                     </Maxbtn>
                     <s.SpacerSmall />
                     <s.SpacerSmall />
-                    <s.TextTotal style={{color: "black", fontSize: "1rem"}}>
+                    <s.TextTotal style={{color: "black"}}>
                       Total&emsp;&emsp;&emsp;&emsp;&emsp;{(CONFIG.DISPLAY_COST * tokens).toString().substring(0, 6)}{" "}{CONFIG.NETWORK.SYMBOL}
                     </s.TextTotal>
                     <s.SpacerSmall />
@@ -607,14 +609,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             Sneak Peaks
             </s.TextTitle>
             <s.SpacerLarge/>
-            <Carousel style={{width: "30%"}} autoplay className="custom-slider">
-    <img src="/config/images/11.jpg" />
-    <img src="/config/images/11.jpg" />
-    <img src="/config/images/11.jpg" />
-    <img src="/config/images/11.jpg" />
-    <img src="/config/images/11.jpg" />
+            <s.CBOX>
+            <Carousel autoplay className="custom-slider">
+    <img src="/config/images/1.jpg" />
+    <img src="/config/images/2.jpg" />
+    <img src="/config/images/3.jpg" />
+    <img src="/config/images/4.jpg" />
+    <img src="/config/images/5.jpg" />
   </Carousel>
-
+  </s.CBOX>
               </s.SecContainer>
 
               <s.SecContainer id="faq">
