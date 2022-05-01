@@ -24,6 +24,14 @@ The simple route is so simple, all you need to do is download the build folder o
 
 The more complex route allows you to add additional functionality if you are comfortable with coding in react.js. (Follow the below instructions for a walk through).
 
+## Changes 🛠️
+
+<b style="color: red">Fixed the BigNumber Issue</b>
+<b style="color: red">>Added Social icons</b>
+<b style="color: red">>Added Story</b>
+<b style="color: red">>Added FAQ</b>
+ Will be adding Merkle Tree whitelit soon...
+
 ## Installation 🛠️
 
 If you are cloning the project then run this first, otherwise you can download the source code on the release page and skip this step.
@@ -38,6 +46,18 @@ Make sure you have node.js installed so you can use npm, then run:
 npm install
 ```
 
+to run development Server
+
+```sh
+npm run start
+```
+
+to Build the File
+
+```sh
+npm run build
+```
+
 ## Usage ℹ️
 
 In order to make use of this dapp, all you need to do is change the configurations to point to your smart contract as well as update the images and theme file.
@@ -46,7 +66,7 @@ For the most part all the changes will be in the `public` folder.
 
 To link up your existing smart contract, go to the `public/config/config.json` file and update the following fields to fit your smart contract, network and marketplace details. The cost should be in Ether.
 
-<b>Fixed the BigNumber Issue</b>
+
 
 Note: this dapp is designed to work with the intended NFT smart contract, that only takes one parameter in the mint function "tokens". But you can change that in the App.js file if you need to use a smart contract that takes 2 params.
 
