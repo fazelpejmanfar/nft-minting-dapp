@@ -65,10 +65,12 @@ For the most part all the changes will be in the `public` folder.
 
 To link up your existing smart contract, go to the `public/config/config.json` file and update the following fields to fit your smart contract, network and marketplace details. The cost should be in Ether.
 
-
-
 Note: this dapp is designed to work with the intended NFT smart contract, that only takes one parameter in the mint function "tokens". But you can change that in the App.js file if you need to use a smart contract that takes 2 params.
 
+Change your Social url in `public/config/config.json` <br>
+<b> Price Should be in Ether </b> <br>
+to edit story and faq q/a edit `src/App.js` <br>
+to change Carousel Images for SneakPeak Replace images in `public/config/images`  <br>
 ```json
 {
   "CONTRACT_ADDRESS": "0x62078f64B75F25B986eC53966f59485C2F9844D1", 
