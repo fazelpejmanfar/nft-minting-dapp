@@ -25,10 +25,10 @@ The more complex route allows you to add additional functionality if you are com
 
 ## Changes 🛠️
 
-<b style="color: red">Fixed the BigNumber Issue</b>
-<b style="color: red">>Added Social icons</b>
-<b style="color: red">>Added Story</b>
-<b style="color: red">>Added FAQ</b>
+<b style="color: red"> Fixed the BigNumber Issue</b>
+<b style="color: red"> Added Social icons</b>
+<b style="color: red"> Added Story</b>
+<b style="color: red"> Added FAQ</b>
  Will be adding Merkle Tree whitelit soon...
 
 ## Installation 🛠️
