@@ -10,13 +10,13 @@ To find out more please visit:
 
 [📺 YouTube](https://www.youtube.com/channel/UC1LV4_VQGBJHTJjEWUmy8nA)
 
-[👄 Discord](https://discord.com/invite/qh6MWhMJDN)
+[👄 Hashlips Discord](https://discord.com/invite/qh6MWhMJDN)
 
-[👄 Discord](https://discord.com/FazelPejmanfar#5915)
+[👄 FazelPejmanfar Discord](https://discord.com/FazelPejmanfar#5915)
 
 # HashLips NFT minting dapp 🔥
 
-![](https://github.com/fazelpejmanfar/nft_minting_dapp/blob/main/banner.png)
+![](https://github.com/fazelpejmanfar/nft-minting-dapp/blob/master/banner.png)
 
 This repo provides a nice and easy way for linking an existing NFT smart contract to this minting dapp. There are two ways of using this repo, you can go the simple route or the more complex one.
 
