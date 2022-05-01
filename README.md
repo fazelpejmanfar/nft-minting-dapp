@@ -29,7 +29,7 @@ The more complex route allows you to add additional functionality if you are com
 If you are cloning the project then run this first, otherwise you can download the source code on the release page and skip this step.
 
 ```sh
-git clone https://github.com/HashLips/hashlips_nft_minting_dapp.git
+git clone https://github.com/fazelpejmanfar/nft-minting-dapp.git
 ```
 
 Make sure you have node.js installed so you can use npm, then run:
@@ -44,25 +44,27 @@ In order to make use of this dapp, all you need to do is change the configuratio
 
 For the most part all the changes will be in the `public` folder.
 
-To link up your existing smart contract, go to the `public/config/config.json` file and update the following fields to fit your smart contract, network and marketplace details. The cost field should be in wei.
+To link up your existing smart contract, go to the `public/config/config.json` file and update the following fields to fit your smart contract, network and marketplace details. The cost should be in Ether.
 
-Note: this dapp is designed to work with the intended NFT smart contract, that only takes one parameter in the mint function "mintAmount". But you can change that in the App.js file if you need to use a smart contract that takes 2 params.
+<b>Fixed the BigNumber Issue</b>
+
+Note: this dapp is designed to work with the intended NFT smart contract, that only takes one parameter in the mint function "tokens". But you can change that in the App.js file if you need to use a smart contract that takes 2 params.
 
 ```json
 {
-  "CONTRACT_ADDRESS": "0x62078f64B75F25B986eC53966f59485C2F9844D1", //contract address
-  "SCAN_LINK": "https://etherscan.io/address/0x62078f64B75F25B986eC53966f59485C2F9844D1", //contract link
+  "CONTRACT_ADDRESS": "0x62078f64B75F25B986eC53966f59485C2F9844D1", 
+  "SCAN_LINK": "https://etherscan.io/address/0x62078f64B75F25B986eC53966f59485C2F9844D1",
   "NETWORK": {
-    "NAME": "Ethereum",
+    "NAME": "Rinkeby",
     "SYMBOL": "ETH",
-    "ID": 1 
+    "ID": 4
   },
   "NFT_NAME": "Hashlips", 
   "SYMBOL": "Hashlips",
   "MAX_SUPPLY": 3333,
-  "DISPLAY_COST": 0.0169, //Price in eth
-  "GAS_LIMIT": 145000, // i suggest to do not change it
-  "MAX_PER_TX": 10,  // max mint per tx
+  "DISPLAY_COST": 0.0025,
+  "GAS_LIMIT": 145000, 
+  "MAX_PER_TX": 10,  
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://opensea.io/collection/",
   "Telegram": "https://",
