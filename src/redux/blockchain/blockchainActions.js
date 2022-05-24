@@ -91,8 +91,20 @@ export const connect = () => {
 
           // Add listeners end
         }
-         else {
-          dispatch(connectFailed(`Change network to ${CONFIG.NETWORK.NAME}.`));
+        else {
+          let userchain = CONFIG.NETWORK.ID;
+          let CHID = Web3.utils.toHex(userchain.toString());
+          try {
+            await ethereum.request({
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId: CHID }],
+            });
+          } catch (switchError) {
+            // This error code indicates that the chain has not been added to MetaMask.
+            if (switchError.code === 4902) {
+              dispatch(connectFailed(`Please Add ${CONFIG.NETWORK.NAME} Network to your Metamask.`));
+            }
+          }
         }
 
       }

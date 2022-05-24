@@ -504,6 +504,7 @@ function App() {
                             textAlign: "center",
                             color: "var(--accent-text)",
                             fontFamily: "coder",
+                            fontSize: 20
                           }}
                         >
                           {blockchain.errorMsg}
